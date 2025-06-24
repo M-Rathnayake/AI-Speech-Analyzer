@@ -14,7 +14,7 @@ from typing import Optional, Dict, Any
 os.environ['HF_HUB_DISABLE_SYMLINKS_WARNING'] = '1'  # Disable symlink warnings
 CACHE_DIR = os.path.join(os.path.expanduser('~'), '.cache', 'hf_models')
 
-# Configure logging
+# configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
