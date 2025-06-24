@@ -11,9 +11,9 @@ An end-to-end system that transcribes audio, extracts key information (phone num
   Powered by OpenAI's Whisper model with 80%+ accuracy on clear audio
 - **Smart Information Extraction**  
   Identifies and categorizes:
-  - ☎️ Phone numbers (including international formats)
-  - ✉️ Email addresses
-  - 👤 Person names
+  -  Phone numbers (including international formats)
+  -  Email addresses
+  -  Person names
 - **Question Answering**  
   Answers natural language questions about the transcript
 - **User-Friendly Interface**  
