@@ -3,7 +3,7 @@ This project was built as a learning exercise - while functional, it has clear a
 
 An end-to-end system that transcribes audio, extracts key information (phone numbers, emails, names), and answers natural language questions about the content.
 
-![Demo Screenshot](demo.gif) *(Add a screenshot or screen recording later)*
+![image](https://github.com/user-attachments/assets/d8796faa-4a8b-47c8-8012-a615fc30e604)
 
 ## Features
 
