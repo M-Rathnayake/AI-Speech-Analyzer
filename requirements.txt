@@ -1,0 +1,5 @@
+openai-whisper
+spacy
+farm-haystack
+streamlit
+python-dotenv

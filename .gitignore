@@ -1,0 +1,20 @@
+# Ignore Python virtual environment
+whisper-env/
+
+# Ignore cache files
+__pycache__/
+*.pyc
+
+# Ignore system or editor files
+.vscode/
+.DS_Store
+
+# Optional: Ignore audio samples if large
+audio_samples/
+
+# Ignore environment variables file
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.env
