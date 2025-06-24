@@ -250,5 +250,5 @@ if __name__ == "__main__":
     """
     st.markdown(hide_streamlit_style, unsafe_allow_html=True)
     
-    # Run main app
+    #Run main app
     main()
