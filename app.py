@@ -30,8 +30,10 @@ def load_models() -> Optional[Dict[str, Any]]:
     """Initialize and cache all AI models with comprehensive error handling"""
     try:
         logger.info("Loading models...")
+        transcriber = AudioTranscriber("base")
+        transcriber.set_progress_callback(lambda p: None)  # Initialize empty callback
         return {
-            "transcriber": AudioTranscriber("base"),
+            "transcriber": transcriber,
             "extractor": InfoExtractor(),
             "qa": QASystem()
         }
@@ -72,20 +74,23 @@ def save_uploaded_file(uploaded_file) -> Optional[str]:
 def transcribe_audio(models: Dict[str, Any], audio_path: str) -> Optional[str]:
     """Robust audio transcription with progress tracking"""
     try:
+        progress_bar = st.progress(0)
+        
+        def progress_callback(progress: float):
+            """Handle progress updates for Streamlit"""
+            progress_bar.progress(min(1.0, max(0.0, progress)))
+        
+        # Set the callback before transcription
+        models["transcriber"].set_progress_callback(progress_callback)
+        
         with st.spinner("🔊 Processing audio (this may take a few minutes)..."):
-            progress_bar = st.progress(0)
-            
-            def progress_callback(progress: float):
-                progress_bar.progress(min(0.99, progress))  # Cap at 99% for final processing
-            
-            result = models["transcriber"].transcribe(
-                audio_path,
-                progress_callback=progress_callback
-            )
+            result = models["transcriber"].transcribe(audio_path)
             progress_bar.progress(1.0)
             return result
+            
     except Exception as e:
         logger.error(f"Transcription failed: {str(e)}", exc_info=True)
+        progress_bar.progress(1.0)  # Ensure progress bar completes
         st.error(f"""
         🚨 Transcription Error:
         {str(e)}

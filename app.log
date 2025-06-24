@@ -1,1 +1,4 @@
 2025-06-24 10:43:08,534 - INFO - Loading models...
+2025-06-24 10:43:10,660 - INFO - Using devices: CPU - Number of GPUs: 0
+2025-06-24 10:43:10,660 - INFO - Init retriever using embeddings of model sentence-transformers/all-MiniLM-L6-v2
+2025-06-24 10:43:10,665 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
